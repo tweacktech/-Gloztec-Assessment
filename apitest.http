@@ -1,0 +1,27 @@
+POST http://127.0.0.1:8000/api/user/register
+      Content-Type: application/json
+      {
+      "name": "Meyor pop",
+      "email": "meyorpop@gmail.com",
+       "password": "1234567890"
+       }
+
+
+ ##login
+POST http://127.0.0.1:8000/api/login
+      Content-Type: application/json
+ {
+ "email": "meyorpop@gmail.com",
+"1234567890": "1234567890"
+ }
+
+##
+POST http://127.0.0.1:8000/api/products
+      Authorization: Bearer <token>
+      Content-Type: application/json
+      {"name": "Laptop", "price": 999.99, "stock": 5}
+
+##
+POST http://127.0.0.1:8000/api/logout \
+      Accept: application/json" \
+      Authorization: Bearer <token>"

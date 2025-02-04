@@ -17,7 +17,7 @@ return new class extends Migration
         $table->foreignId('user_id')->constrained()->onDelete('cascade');
         $table->string('title');
         $table->text('description')->nullable();
-        $table->enum('status', ['pending', 'completed'])->default('pending');
+        $table->enum('status', ['pending', 'completed','in-progress'])->default('pending');
         $table->date('due_date');
         $table->timestamps();
 

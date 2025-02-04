@@ -77,13 +77,11 @@
                             <label for="description" class="form-label">Description</label>
                             <textarea name="description" id="description" class="form-control" rows="4"></textarea>
                         </div>
-
                         <!-- Due Date Field -->
                         <div class="mb-3">
                             <label for="due_date" class="form-label">Due Date</label>
-                            <input type="date" name="due_date" id="due_date" class="form-control" required>
+                            <input type="date" name="due_date" id="due_date" class="form-control" required min="">
                         </div>
-
                         <!-- Submit Button -->
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">Create Task</button>
@@ -95,3 +93,13 @@
     </div>
 </div>
 @endsection
+
+<script>
+    // Set the minimum date to tomorrow
+    document.addEventListener("DOMContentLoaded", function () {
+        let today = new Date();
+        today.setDate(today.getDate() + 1); // Add one day to get tomorrow's date
+        let minDate = today.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+        document.getElementById("due_date").setAttribute("min", minDate);
+    });
+</script>

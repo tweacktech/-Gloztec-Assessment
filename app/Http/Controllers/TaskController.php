@@ -24,7 +24,7 @@ class TaskController extends Controller
         $validate = Validator::make($request->all(), [
             'title'       => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'required|string|in:pending,completed,in-progress',
+            'status' => 'nullable|string|in:pending,completed,in-progress',
             'due_date'    => 'required|date|after:today',
         ]);
 

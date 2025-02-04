@@ -18,7 +18,7 @@ class ProductController extends Controller
         try {
             $products = Product::all();
             // Return a success response
-            return $this->success($products,'');
+            return $this->success($products);
         } catch (Throwable $th) {
             Log::error('processing failed: ' . $th->getMessage());
             return $this->error('Failed to process : ', $th->getMessage());
